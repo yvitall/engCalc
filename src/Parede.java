@@ -15,6 +15,7 @@ public class Parede {
         return larguraParede;
     }
     public float calcularArea(){
+
         return this.alturaParede * this.larguraParede;
     }
 
