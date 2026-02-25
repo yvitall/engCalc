@@ -20,7 +20,7 @@ Além de ser uma ferramenta útil, o projeto tem sido meu laboratório prático 
 Se você quer apenas usar a calculadora, não é necessário baixar o código-fonte!
 
 1. Certifique-se de ter o **Java (JRE) 25 ou superior** instalado na sua máquina.
-2. Vá até a aba [Releases](link_para_sua_aba_releases_aqui) deste repositório.
+2. Vá até a aba [Releases](https://github.com/yvitall/engCalc/releases/tag/v1.0.0) deste repositório.
 3. Baixe o arquivo `.zip` da versão mais recente e extraia em seu computador.
 4. Dê um duplo clique no arquivo **`IniciarCalculadora.bat`** (no Windows).
 5. O terminal será aberto e você poderá navegar pelo menu interativo!
@@ -31,4 +31,11 @@ Caso queira clonar o projeto para testar ou contribuir:
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
+   git clone [https://github.com/yvitall/engCalc.git](https://github.com/yvitall/engCalc.git)
+   ```
+2. Abra o projeto na sua IDE de preferência (IntelliJ, Eclipse, etc.).
+
+3. Execute o método main localizado na classe Main.java.
+
+👨‍💻 Autor
+Desenvolvido por [Yuri Vital] Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/yurivitall/).
