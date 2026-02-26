@@ -31,11 +31,11 @@ Caso queira clonar o projeto para testar ou contribuir:
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/yvitall/engCalc.git](https://github.com/yvitall/engCalc.git)
+   git clone https://github.com/yvitall/engCalc.git
    ```
 2. Abra o projeto na sua IDE de preferência (IntelliJ, Eclipse, etc.).
 
 3. Execute o método main localizado na classe Main.java.
 
 👨‍💻 Autor
-Desenvolvido por [Yuri Vital] Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/yurivitall/).
+Desenvolvido por <b>Yuri Vital</b> Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/yurivitall/).
