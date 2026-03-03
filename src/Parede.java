@@ -1,7 +1,7 @@
 public class Parede {
     private float alturaParede;
     private float larguraParede;
-
+    private float areaParede;
     public void setterAlturaParede(float alturaParede) {
         this.alturaParede = alturaParede;
     }
@@ -15,8 +15,10 @@ public class Parede {
         return larguraParede;
     }
     public float calcularArea(){
-
         return this.alturaParede * this.larguraParede;
+    }
+    public void getArea(double areaParede){
+        this.areaParede = calcularArea();
     }
 
 }
