@@ -1,41 +1,48 @@
 # 🧱 Calculadora de Materiais (EngCalc)
 
-Um sistema desenvolvido em **Java** para automatizar cálculos de materiais de construção (como área de paredes e descontos de esquadrias).
+Um sistema de console (CLI) desenvolvido em **Java** para automatizar cálculos de materiais de construção, com foco na precisão de área de paredes, descontos de esquadrias e compra de revestimentos cerâmicos.
 
 ## 💡 Sobre o Projeto
-Este é o meu primeiro projeto pessoal de programação! Ele nasceu de uma necessidade real: ajudar meu pai a calcular a quantidade de materiais necessários (como revestimentos) para paredes, automatizando um processo que antes era feito à mão.
+Este é o meu primeiro projeto pessoal de programação! Ele nasceu de uma necessidade real: ajudar meu pai a calcular a quantidade de materiais necessários para o trabalho de revestimento, automatizando um processo que antes era feito à mão e estava sujeito a falhas de cálculo.
 
-Além de ser uma ferramenta útil, o projeto tem sido meu laboratório prático para aplicar conceitos de **Lógica de Programação**, **Estruturas de Controle** e introdução à **Programação Orientada a Objetos (POO)**.
+Além de ser uma ferramenta de grande utilidade no dia a dia, o projeto tem sido meu laboratório prático. Aqui, apliquei conceitos valiosos como:
+- **Lógica de Programação e Estruturas de Controle**
+- **Tratamento de Entradas (Scanner e Buffer)**
+- **Programação Orientada a Objetos (POO)**: Classes (`Parede`, `Esquadria`, `Revestimento`), métodos e responsabilidade única.
 
-⚠️ **Status:** Em desenvolvimento (Work in Progress).
+✅ **Status:** MVP Finalizado e 100% Funcional.
 
 ## 🛠️ Funcionalidades Atuais
-- [x] Cálculo de área total de paredes (Metros Quadrados).
-- [x] Subtração automática de áreas de esquadrias (Portas e Janelas).
-- [x] Geração de Relatório Final com as medidas para aplicação do revestimento.
-- [ ] Cálculo de quantidade de cerâmica necessária (com margem de perda). *(Em breve)*
+- [x] **Onboarding Interativo:** Tela de instruções iniciais garantindo o uso correto do sistema.
+- [x] **Cálculo de Área de Paredes:** Medição exata em metros quadrados.
+- [x] **Desconto de Vãos:** Subtração automática de áreas de esquadrias (Portas e Janelas).
+- [x] **Cálculo de Revestimento Inteligente:** Retorna a quantidade exata de peças (cerâmica/porcelanato) necessárias para a obra, **já incluindo arredondamento para cima e adicionando automaticamente 10% de margem de perda (recortes).**
+- [x] **Validação de Fluxo:** O sistema orienta o usuário passo a passo, exigindo o cálculo do ambiente antes dos materiais.
+- [x] **Relatório Geral:** Geração de um resumo detalhado da sessão/obra.
 
 ## 🚀 Como executar o programa (Para Usuários)
 
-Se você quer apenas usar a calculadora, não é necessário baixar o código-fonte!
+Se você quer apenas usar a calculadora para a sua obra, não é necessário baixar o código-fonte ou instalar ferramentas complexas!
 
 1. Certifique-se de ter o **Java (JRE) 25 ou superior** instalado na sua máquina.
-2. Vá até a aba [Releases](https://github.com/yvitall/engCalc/releases/tag/v1.0.0) deste repositório.
-3. Baixe o arquivo `.zip` da versão mais recente e extraia em seu computador.
-4. Dê um duplo clique no arquivo **`IniciarCalculadora.bat`** (no Windows).
-5. O terminal será aberto e você poderá navegar pelo menu interativo!
+2. Vá até a aba [Releases](https://github.com/yvitall/engCalc/releases) deste repositório.
+3. Baixe o arquivo executável da versão mais recente (`EngCalc.exe`).
+4. Dê um duplo clique no arquivo **`EngCalc.exe`**.
+5. O terminal será aberto automaticamente e você poderá navegar pelo menu!
+
+*(Nota: Cada vez que o sistema é iniciado, uma nova "Sessão de Obra" é criada. Os dados são limpos ao fechar o aplicativo).*
 
 ## 💻 Como rodar o código-fonte (Para Desenvolvedores)
 
-Caso queira clonar o projeto para testar ou contribuir:
+Caso queira clonar o projeto para testar, compilar ou contribuir:
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/yvitall/engCalc.git
+1. Clone este repositório no seu terminal:
+```bash
+   git clone [https://github.com/yvitall/engCalc.git](https://github.com/yvitall/engCalc.git)
    ```
-2. Abra o projeto na sua IDE de preferência (IntelliJ, Eclipse, etc.).
+2. Abra o projeto na sua IDE de preferência (IntelliJ IDEA, Eclipse, etc.).
+3. Certifique-se de que o SDK configurado é o Java 25.
+4. Execute o método main localizado na classe Main.java.
 
-3. Execute o método main localizado na classe Main.java.
-
-👨‍💻 Autor
-Desenvolvido por <b>Yuri Vital</b> Conecte-se comigo no [LinkedIn](https://www.linkedin.com/in/yurivitall/).
+## 👨‍💻 Autor Desenvolvido por Yuri Vital.
+Conecte-se comigo [LinkedIn](https://www.linkedin.com/in/yurivitall/).
