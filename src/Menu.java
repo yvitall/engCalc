@@ -2,100 +2,114 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class Menu {
+    Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+    double areaParede;
+    double areaEsquadria;
+    double areaRevestimento;
+    String descServico;
 
     public void showMenu() {
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
+        System.out.println("===== ENG CALC - SYSTEM =====");
+        System.out.print("Título Obra: ");
+        descServico = sc.nextLine();
+        int option1 = -1;
 
-
-        System.out.println("=========================");
-        System.out.println("TESTE");
-
-        int option1;
-        while (true) {
-            System.out.println("Selecione uma opção: \n1. CALCULAR ÁREA PAREDE\n2.CALCULAR ÁREA PARA REVESTIMENTO");
+        while (option1 != 0) {
+            System.out.println("1. CALCULAR ÁREA DA PAREDE\n2. CALCULAR QUANTIDADE DE REVESTIMENTO\n0. SAIR");
+            System.out.print("Escolha uma opção: ");
             option1 = sc.nextInt();
+            sc.nextLine();
 
-            if (option1 == 1) {
-                Parede parede = new Parede();
-                System.out.println("Digite a ALTURA da parede em METROS: (ex: 5.80)");
-                float alturaValue = sc.nextFloat();
-                parede.setterAlturaParede(alturaValue);
-                System.out.println("Digite a LARGURA da parede em METROS: (ex: 1.75)");
-                float larguraValue = sc.nextFloat();
-                parede.setterLarguraParede(larguraValue);
-                float areaParede = parede.calcularArea();
-                System.out.printf("ÁREA: %.2fm²\n", areaParede);
-                System.out.println("Há algum tipo de ESQUADRIAS na PAREDE: (SIM/NÃO)");
-                sc.nextLine();
-                String option2 = sc.nextLine();
-
-                if (option2.equalsIgnoreCase("SIM")) {
-                    while (true) {
-                        System.out.println("Selecione o tipo: \n1. Porta\n2. Janela");
-                        int option3 = sc.nextInt();
-                        if (option3 == 1) {
-                            String typeEsquadria = "Porta";
-                            Esquadria esquadria = new Esquadria();
-                            System.out.printf("Digite a ALTURA da %s (ex: 1.21): \n", typeEsquadria);
-                            float larguraEsquadria = sc.nextFloat();
-                            esquadria.setterLarguraEsquadria(larguraEsquadria);
-                            System.out.printf("Digite a LARGURA da %s (ex: 3.25): \n", typeEsquadria);
-                            ;
-                            float alturaEsquadria = sc.nextFloat();
-                            sc.nextLine();
-                            esquadria.setterAlturaEsquadria(alturaEsquadria);
-                            float areaEsquadria = esquadria.calcularArea();
-                            System.out.printf("ÁREA: %.2fm²\n", areaEsquadria);
-
-                            float areaRevestimento = areaParede - areaEsquadria;
-
-                            System.out.printf("======= RELATÓRIO FINAL (PAREDE) ======\n" +
-                                    "Área Parede: %.2fm²\n" +
-                                    "Área Esquadria (%s): %.2fm²\n" +
-                                    "Área total para aplicação de Revestimento: %.2fm²\n", areaParede, typeEsquadria, areaEsquadria, areaRevestimento);
-                            break;
-                        } else if (option3 == 2) {
-                            String typeEsquadria = "Janela";
-                            Esquadria esquadria = new Esquadria();
-                            System.out.printf("Digite a LARGURA da %s (ex: 3.21): \n", typeEsquadria);
-                            float larguraEsquadria = sc.nextFloat();
-                            esquadria.setterLarguraEsquadria(larguraEsquadria);
-                            System.out.printf("Digite a ALTURA da %s (ex: 1.20): \n", typeEsquadria);
-                            float alturaEsquadria = sc.nextFloat();
-                            esquadria.setterAlturaEsquadria(alturaEsquadria);
-                            float areaEsquadria = esquadria.calcularArea();
-                            System.out.printf("ÁREA: %.2fm²\n", areaEsquadria);
-
-                            float areaRevestimento = areaParede - areaEsquadria;
-
-                            System.out.printf("======= RELATÓRIO FINAL (PAREDE) ======\n" +
-                                    "Área Parede: %.2fm²\n" +
-                                    "Área Esquadria (%s): %.2fm²\n" +
-                                    "Área para Revestimento: %.2fm²\n", areaParede, typeEsquadria, areaEsquadria, areaRevestimento);
-                            break;
-                        } else if (option3 != 1 && option3 != 2) {
-                            System.out.println("Opção Inválida, Selecione novamente.");
-                        }
-                    }
-                } else if (option2.equalsIgnoreCase("NÃO")) {
-                    System.out.printf("======= RELATÓRIO FINAL (PAREDE) ======\n" +
-                            "Área TOTAL: %.2fm²", areaParede);
-                } else {
-                    System.out.println("Opção Inválida, Preencha novamente.");
+            switch (option1) {
+                case 1: {
+                    fluxoCalculoParede();
+                    break;
                 }
+                case 2: {
 
-            }
-            System.out.println("\nDeseja calcular novamente: (Sim/Não)");
-            String option4 = sc.next();
-            if (option4.equalsIgnoreCase("SIM")) {
-                System.out.println("Executando novamente... Aguarde");
-
-            } else if (option4.equalsIgnoreCase("NÃO")) {
-                System.out.println("Encerrando programa. \nDesenvolvido por Yuri Vital");
-                break;
+                }
+                case 0: {
+                    System.out.println("Encerrando programa.\n Desenvolvido por Yuri Vital");
+                    break;
+                }
             }
         }
     }
 
+    public void fluxoCalculoParede() {
+        Parede parede = new Parede();
+        System.out.print("Digite a ALTURA da PAREDE (ex.: 3.72): ");
+        double altParede = sc.nextDouble();
+        parede.setterAlturaParede(altParede);
+        System.out.print("Digite a LARGURA da PAREDE (ex.: 8.66): ");
+        double largParede = sc.nextDouble();
+        sc.nextLine();
+        parede.setterLarguraParede(largParede);
+        areaParede = parede.calcularArea();
+
+        System.out.print("Há algum tipo de ESQUADRIA (sim/não): ");
+        String option2 = sc.nextLine();
+        if (option2.equalsIgnoreCase("Sim")) {
+            System.out.print("Qual tipo da ESQUADRIA\n1.Janela\n2.Porta\n");
+            int option3 = sc.nextInt();
+            sc.nextLine();
+            switch (option3) {
+                case 1: {
+                    String typeOfEsquadria = "JANELA";
+                    System.out.printf("Digite a ALTURA da %s (ex.: 1.54): ", typeOfEsquadria);
+                    Esquadria esquadria = new Esquadria();
+                    double altEsquadria = sc.nextDouble();
+                    sc.nextLine();
+                    esquadria.setterAlturaEsquadria(altEsquadria);
+                    System.out.print("\nDigite a LARGURA da ESQUADRIA (ex.: 2.26): ");
+                    double largEsquadria = sc.nextDouble();
+                    sc.nextLine();
+                    esquadria.setterLarguraEsquadria(largEsquadria);
+
+                    areaEsquadria = esquadria.calcularArea();
+                    areaRevestimento = areaParede - areaEsquadria;
+
+                    for (int i = 0; i < 50; ++i) System.out.println();
+                    System.out.println("===== RELATÓRIO PAREDE =====");
+                    System.out.printf("Área PAREDE: %.2fm²\n", areaParede);
+                    System.out.printf("Área %s: %.2fm²\n", typeOfEsquadria, areaEsquadria);
+                    System.out.printf("Área Total para REVESTIMENTO: %.2fm²\n", areaRevestimento);
+
+                    break;
+                }
+                case 2: {
+                    String typeOfEsquadria = "PORTA";
+                    System.out.printf("Digite a ALTURA da %s (ex.: 1.54): ", typeOfEsquadria);
+                    Esquadria esquadria = new Esquadria();
+                    double altEsquadria = sc.nextDouble();
+                    sc.nextLine();
+                    esquadria.setterAlturaEsquadria(altEsquadria);
+                    System.out.print("Digite a LARGURA da ESQUADRIA (ex.: 2.26): ");
+                    double largEsquadria = sc.nextDouble();
+                    sc.nextLine();
+                    esquadria.setterLarguraEsquadria(largEsquadria);
+
+                    areaEsquadria = esquadria.calcularArea();
+                    areaRevestimento = areaParede - areaEsquadria;
+
+                    for (int i = 0; i < 50; ++i) System.out.println();
+                    System.out.println("===== RELATÓRIO PAREDE =====");
+                    System.out.printf("Área PAREDE: %.2fm²\n", areaParede);
+                    System.out.printf("Área %s: %.2fm²\n", typeOfEsquadria, areaEsquadria);
+                    System.out.printf("Área Total para REVESTIMENTO: %.2fm²\n\n", areaRevestimento);
+
+
+                    break;
+                }
+            }
+        } else {
+            for (int i = 0; i < 50; ++i) System.out.println();
+            System.out.println("===== RELATÓRIO PAREDE =====");
+            System.out.printf("Área PAREDE: %.2fm²\n", areaParede);
+            System.out.printf("Área Total para REVESTIMENTO: %.2fm²\n\n", areaParede);
+
+        }
+
+    }
 }
+

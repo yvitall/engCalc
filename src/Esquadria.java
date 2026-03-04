@@ -1,25 +1,24 @@
 public class Esquadria {
-    private float alturaEsquadria;
-    private float larguraEsquadria;
+    private double alturaEsquadria;
+    private double larguraEsquadria;
 
-    public void setterAlturaEsquadria(float alturaEsquadria) {
+    public void setterAlturaEsquadria(double alturaEsquadria) {
 
         this.alturaEsquadria = alturaEsquadria;
     }
-    public void setterLarguraEsquadria(float larguraJanela) {
+    public void setterLarguraEsquadria(double larguraJanela) {
 
         this.larguraEsquadria = larguraJanela;
     }
-    public float getAlturaEsquadria() {
+    public double getAlturaEsquadria() {
 
         return alturaEsquadria;
     }
-    public float getLarguraEsquadria() {
+    public double getLarguraEsquadria() {
 
         return larguraEsquadria;
     }
-    public float calcularArea(){
-
+    public double calcularArea(){
         return this.alturaEsquadria *  this.larguraEsquadria;
     }
 }

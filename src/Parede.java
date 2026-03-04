@@ -1,24 +1,20 @@
 public class Parede {
-    private float alturaParede;
-    private float larguraParede;
-    private float areaParede;
-    public void setterAlturaParede(float alturaParede) {
+    private double alturaParede;
+    private double larguraParede;
+    private double areaParede;
+    public void setterAlturaParede(double alturaParede) {
         this.alturaParede = alturaParede;
     }
-    public void setterLarguraParede(float larguraParede) {
+    public void setterLarguraParede(double larguraParede) {
         this.larguraParede = larguraParede;
     }
-    public float getAlturaParede() {
+    public double getAlturaParede() {
         return alturaParede;
     }
-    public float getLarguraParede() {
+    public double getLarguraParede() {
         return larguraParede;
     }
-    public float calcularArea(){
+    public double calcularArea(){
         return this.alturaParede * this.larguraParede;
     }
-    public void getArea(double areaParede){
-        this.areaParede = calcularArea();
-    }
-
 }
