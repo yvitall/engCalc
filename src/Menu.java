@@ -56,11 +56,16 @@ public class Menu {
                             System.out.println("Opção inválida. Tente novamente.");
                         }
                     }
-                    System.out.println("Deseja ver MENU novamente? (Sim/Não)");
-                    String optionRepeat = sc.nextLine();
-                    if (optionRepeat.equalsIgnoreCase("Não")) {
-                        System.out.println("Encerrando programa.\nDesenvolvido por Yuri Vital");
-                        System.exit(0);
+                    if (option1 != 0) {
+                        System.out.println("Deseja ver MENU novamente? (Sim/Não)");
+                        String optionRepeat = sc.nextLine().trim();
+                        if (optionRepeat.equalsIgnoreCase("Não") ||
+                                optionRepeat.equalsIgnoreCase("Nao") ||
+                                optionRepeat.equalsIgnoreCase("n")) {
+                            System.out.println("Encerrando programa.\nDesenvolvido por Yuri Vital");
+                            System.exit(0);
+
+                        }
                     }
                 }
 
@@ -72,7 +77,6 @@ public class Menu {
                 System.out.println("Opção Inválida, tente novamente.");
             }
         }
-
     }
 
     public void fluxoCalculoParede() {
