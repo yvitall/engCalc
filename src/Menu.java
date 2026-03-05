@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -14,12 +15,12 @@ public class Menu {
     public void showMenu() {
         RecomendacoesUso recomendacoesUso = new RecomendacoesUso();
         recomendacoesUso.verInstrucoes();
-        String optionOK = sc.nextLine();
         while (true) {
+            String optionOK = sc.nextLine();
             if (optionOK.equalsIgnoreCase("OK")) {
                 rodarSpinner();
-                for (int i = 0; i < 50; ++i) System.out.println();
-                System.out.println("===== ENG CALC - SYSTEM =====");
+
+                System.out.println("\n===== ENG CALC - SYSTEM =====");
                 System.out.print("Título Obra: ");
                 descServico = sc.nextLine();
                 int option1 = -1;
@@ -58,7 +59,8 @@ public class Menu {
                     System.out.println("Deseja ver MENU novamente? (Sim/Não)");
                     String optionRepeat = sc.nextLine();
                     if (optionRepeat.equalsIgnoreCase("Não")) {
-                        break;
+                        System.out.println("Encerrando programa.\nDesenvolvido por Yuri Vital");
+                        System.exit(0);
                     }
                 }
 
@@ -106,9 +108,10 @@ public class Menu {
                     areaEsquadria = esquadria.calcularArea();
                     areaRevestimento = areaParede - areaEsquadria;
                     rodarSpinner();
-                    for (int i = 0; i < 50; ++i) System.out.println();
-                    System.out.println("===== RELATÓRIO PAREDE =====");
+                    System.out.println();
+                    System.out.println("===== ENG CALC - SYSTEM =====");
                     System.out.printf("OBRA: %s\n", descServico);
+                    System.out.println("===== RELATÓRIO PAREDE =====");
                     System.out.printf("Área PAREDE: %.2fm²\n", areaParede);
                     System.out.printf("Área %s: %.2fm²\n", typeOfEsquadria, areaEsquadria);
                     System.out.printf("Área Total para REVESTIMENTO: %.2fm²\n", areaRevestimento);
@@ -130,22 +133,24 @@ public class Menu {
                     areaEsquadria = esquadria.calcularArea();
                     areaRevestimento = areaParede - areaEsquadria;
                     rodarSpinner();
-                    for (int i = 0; i < 50; ++i) System.out.println();
-                    System.out.println("===== RELATÓRIO PAREDE =====");
+                    System.out.println();
+                    System.out.println("\n===== ENG CALC - SYSTEM =====");
                     System.out.printf("OBRA: %s\n", descServico);
+                    System.out.println("===== RELATÓRIO PAREDE =====");
                     System.out.printf("Área PAREDE: %.2fm²\n", areaParede);
                     System.out.printf("Área %s: %.2fm²\n", typeOfEsquadria, areaEsquadria);
                     System.out.printf("Área Total para REVESTIMENTO: %.2fm²\n\n", areaRevestimento);
-
 
                     break;
                 }
             }
         } else {
             rodarSpinner();
-            for (int i = 0; i < 50; ++i) System.out.println();
-            System.out.println("===== RELATÓRIO PAREDE =====");
+            areaRevestimento = areaParede;
+            System.out.println();
+            System.out.println("===== ENG CALC - SYSTEM =====");
             System.out.printf("OBRA: %s\n", descServico);
+            System.out.println("===== RELATÓRIO PAREDE =====");
             System.out.printf("Área PAREDE: %.2fm²\n", areaParede);
             System.out.printf("Área Total para REVESTIMENTO: %.2fm²\n\n", areaParede);
         }
@@ -166,8 +171,9 @@ public class Menu {
         qtdPecas = revestimento.calcularQtdPecas(areaRevestimento);
         rodarSpinner();
 
-        System.out.println("===== RELATÓRIO REVESTIMENTO =====");
+        System.out.println("\n===== ENG CALC - SYSTEM =====");
         System.out.printf("OBRA: %s\n", descServico);
+        System.out.println("===== RELATÓRIO REVESTIMENTO =====");
         System.out.printf("Área da peça de REVESTIMENTO: %.2fm²\n", areaPecaRev);
         System.out.printf("Área TOTAL para REVESTIMENTO: %.2fm²\n", areaRevestimento);
         System.out.printf("Total de peças necessárias: %.0f\n", qtdPecas);
@@ -178,13 +184,15 @@ public class Menu {
     }
 
     public void relatorioGeral() {
-        System.out.printf("===== RELATÓRIO GERAL - %s =====\n", descServico);
-        System.out.printf("Área total PAREDE: %.2fm²", areaParede);
-        System.out.printf("Área total ESQUADRIA: %.2fm²", areaEsquadria);
-        System.out.printf("Área total para REVESTIMENTO: %.2fm²", areaRevestimento);
-        System.out.printf("Área PEÇA do REVESTIMENTO: %.2fm²", areaPecaRev);
-        System.out.printf("Quantidade de peças: %.0f", qtdPecas);
-        System.out.printf("Quantidade de peças c/ MARGEM DE PERDA: %d", qtdPecasCMargem);
+        System.out.println("\n===== ENG CALC - SYSTEM =====");
+        System.out.printf("OBRA: %s\n", descServico);
+        System.out.println("===== RELATÓRIO GERAL =====");
+        System.out.printf("Área total PAREDE: %.2fm²\n", areaParede);
+        System.out.printf("Área total ESQUADRIA: %.2fm²\n", areaEsquadria);
+        System.out.printf("Área total para REVESTIMENTO: %.2fm²\n", areaRevestimento);
+        System.out.printf("Área PEÇA do REVESTIMENTO: %.2fm²\n", areaPecaRev);
+        System.out.printf("Quantidade de peças: %.0f\n", qtdPecas);
+        System.out.printf("Quantidade de peças c/ MARGEM DE PERDA: %d\n", qtdPecasCMargem);
     }
 
     public void rodarSpinner() {

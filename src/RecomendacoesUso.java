@@ -21,7 +21,7 @@ public class RecomendacoesUso {
         System.out.println("=======================================================");
         System.out.println("               (    OK    )    ( CANCELAR )            ");
         System.out.println("=======================================================");
-        System.out.println("\n DIGITE SUA ESCOLHA: ");
+        System.out.print("DIGITE SUA ESCOLHA: ");
     }
 
 }
